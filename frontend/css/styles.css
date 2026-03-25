@@ -1,0 +1,35 @@
+
+ 
+ .car-image {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      background-color: #f0f0f0; /* placeholder bg */
+      margin-bottom: 10px;
+    }
+
+ 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #1a73e8; /* nice blue */
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.navbar-left .logo {
+  height: 50px;
+}
+
+.navbar-right a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.navbar-right a:hover {
+  text-decoration: underline;
+}

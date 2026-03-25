@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Success</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Booking Successful!</h2>
+    
+    <div id="myBookings" class="row"></div>
+    
+    <div class="text-center mt-4">
+      <a href="index.html" class="btn btn-primary">Back to Available Cars</a>
+    </div>
+  </div>
+
+  <script>
+    const bookings = JSON.parse(localStorage.getItem("myBookings") || "[]");
+    const container = document.getElementById("myBookings");
+
+    if (bookings.length === 0) {
+      container.innerHTML = "<p class='text-center'>No bookings yet.</p>";
+    } else {
+      bookings.forEach(b => {
+        container.innerHTML += `
+          <div class="col-md-6 mb-3">
+            <div class="card p-3 shadow">
+              <h5>${b.vehicleModel}</h5>
+              <p><b>Your Booking id:</b> ${b.bookingId}</p>
+              <p><b>Your Vehicle no:</b> ${b.vehicleNumber}</p>
+              <p><b>Start Date:</b> ${b.startDate}</p>
+              <p><b>Days:</b> ${b.noOfDays}</p>
+              <p><b>Total Cost:</b> ₹${b.totalCost}</p>
+            </div>
+          </div>
+        `;
+      });
+    }
+  </script>
+</body>
+</html>
