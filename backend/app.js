@@ -11,7 +11,7 @@ const bookingRoutes = require('./routes/bookingRoutes');
 const { HomeResponse, TestResponse } = require('./controllers/authController');
 
 
-const PORT = process.env.PORT || 8089;
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 app.use(cors());
