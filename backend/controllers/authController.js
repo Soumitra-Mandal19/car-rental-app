@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+require('dotenv').config();
 const userModel = require("../models/userModel");
 
 function HomeResponse(req, res) {
@@ -97,7 +98,7 @@ function loginUser (req, res) {
             {userId: user.id,
              role: user.role   
             },
-            "mysecretkey",
+            process.env.JWT_SECRET,
             {expiresIn: "1d"}
         );
 
