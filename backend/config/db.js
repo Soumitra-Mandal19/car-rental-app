@@ -2,6 +2,8 @@ const mysql = require('mysql2');
 require('dotenv').config();
 const fs = require('fs');
 
+
+
 const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -9,7 +11,7 @@ const db = mysql.createPool({
     database: process.env.DB_NAME,
     port: process.env.DB_PORT,
     ssl: {
-        ca: fs.readFileSync(__dirname + '/../cert.pem')
+         ca: Buffer.from(process.env.DB_CERT || '', 'utf-8')
     }
 });
 
