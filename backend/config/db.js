@@ -9,7 +9,7 @@ const db = mysql.createPool({
     database: process.env.DB_NAME,
     port: process.env.DB_PORT,
     ssl: {
-        ca: fs.readFileSync(__dirname + '/cert.pem')
+        ca: fs.readFileSync(__dirname + '/../cert.pem')
     }
 });
 
