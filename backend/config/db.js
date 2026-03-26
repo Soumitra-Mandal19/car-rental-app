@@ -1,16 +1,8 @@
 const mysql = require('mysql2');
 require('dotenv').config();
 const fs = require('fs');
+const dotenv = require('dotenv');
 
-
-let sslOptions = undefined;
-
-// Use certificate file if it exists
-if (process.env.DB_CERT_PATH && fs.existsSync(process.env.DB_CERT_PATH)) {
-    sslOptions = {
-        ca: fs.readFileSync(process.env.DB_CERT_PATH)
-    };
-}
 
 const db = mysql.createPool({
     host: process.env.DB_HOST,
@@ -18,7 +10,10 @@ const db = mysql.createPool({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     port: process.env.DB_PORT,
-    ssl: sslOptions
+
+    ssl: {
+        ca: fs.readFileSync(process.env.CA)
+    }
 });
 
 db.getConnection((err, connection) => {
