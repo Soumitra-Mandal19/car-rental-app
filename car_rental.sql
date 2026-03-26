@@ -36,6 +36,14 @@ FOREIGN KEY (customer_id) REFERENCES users(id) ON DELETE CASCADE
 
 );
 
+INSERT INTO users (id, name, email, password, role, created_at) VALUES
+(1, 'Soumitra', 'soumitra@gmail.com', '$2b$10$oSXvFfwWIwXd./0saYInp.ujVSeOzbd9rGwiCtAbrOUK3Rjj8hVb2', 'customer', '2026-03-24 10:22:16'),
+(3, 'Ronnie', 'ronnie@gmail.com', '$2b$10$iCpi4n5EB/SD935iFqW/fOVwWmu9qVL3.XRvZyaynpAxAGpgy8gcm', 'customer', '2026-03-24 15:50:48'),
+(4, 'Test Agency', 'agency1@example.com', '$2b$10$/ftzFd5bfXD6p7Ks35P0juwmV5JeqRwNg1JTBszzBdB8EA3sl5N3G', 'agency', '2026-03-24 16:11:36'),
+(5, 'Sangram Kumar', 'sangramtest@example.com', '$2b$10$dO3y5K8/bnigHLJ8wZWDwebANsbnQz0WtDZJ89M5pdsQqz5VoPEEO', 'customer', '2026-03-25 11:59:04'),
+(6, 'Ajay Patel', 'ajay@gmail.com', '$2b$10$rn9BhVjHdWufefh30EYPKeYPmoMtL39htJ5ty46ww2fSht1FiA/kC', 'customer', '2026-03-25 12:15:24'),
+(7, 'Rajat', 'rajat@gmail.com', '$2b$10$bslZOf9oQ/hl4SOUDpxVfeYoJ0LifDSGrpSE/UaebPR/xXSMMs2yW', 'customer', '2026-03-25 12:32:42'),
+(8, 'Car Agency', 'caragency@gmail.com', '$2b$10$codR6OwvtVo3yL8IsKb2g./3DJMDDitQiaUKC8IpVBDcZR99kwnSq', 'agency', '2026-03-25 15:33:46');
 
 INSERT INTO cars (agency_id, vehicle_model, vehicle_number, seating_capacity, rent_per_day, image_url)
 VALUES
