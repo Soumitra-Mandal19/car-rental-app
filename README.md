@@ -2,7 +2,19 @@
 
 A full-stack Car Rental Web Application built using **Node.js, Express, MySQL, and Vanilla JavaScript**.
 
+
 ---
+
+## 🌐 Live Deployment
+
+### 🚀 Frontend (Vercel)
+https://car-rental-lyzpc5wbz-soumitra-mandals-projects.vercel.app
+
+### 🚀 Backend (Render)
+https://car-rental-app-6frm.onrender.com
+
+### 🗄️ Database
+TiDB Cloud (MySQL-compatible distributed database)
 
 ## 🚀 Features
 
@@ -28,7 +40,7 @@ A full-stack Car Rental Web Application built using **Node.js, Express, MySQL, a
 
 **Database**
 
-* MySQL
+* TiDB Cloud (MySQL-compatible distributed database)
 
 **Authentication**
 
@@ -37,7 +49,17 @@ A full-stack Car Rental Web Application built using **Node.js, Express, MySQL, a
 
 ---
 
+## 📡 Deployment Architecture
+
+Frontend (Vercel)  
+↓  
+Backend (Render)  
+↓  
+Database (TiDB Cloud)
+
 ## 📁 Project Folder Structure
+
+---
 
 ```
 car-rental-app/
@@ -99,6 +121,9 @@ This file contains:
 * users table
 * cars table
 * bookings table
+* Additionally, insert queries for cars are also included in the project.
+
+* > 🔐 Note: The backend connects securely to TiDB Cloud using SSL (cert.pem).
 
 ---
 
@@ -117,7 +142,7 @@ DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=yourpassword
 DB_NAME=car_rental
-PORT=8089
+PORT=4000
 JWT_SECRET=mysecretkey
 ```
 
@@ -130,7 +155,7 @@ DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=
 DB_NAME=car_rental
-PORT=8089
+PORT=4000
 JWT_SECRET=your_secret_key
 ```
 
@@ -141,13 +166,15 @@ JWT_SECRET=your_secret_key
 ```bash
 cd backend
 npm install
-node app.js
+npm run dev (development mode)
+OR
+npm start (production mode)
 ```
 
 Server runs on:
 
 ```
-http://localhost:8089
+http://localhost:4000
 ```
 
 ---
@@ -244,7 +271,7 @@ frontend/
 Base URL:
 
 ```
-http://localhost:8089/api
+https://car-rental-app-6frm.onrender.com/api
 ```
 
 Configured in:
@@ -300,21 +327,35 @@ localStorage.setItem("role", data.role);
 
 ---
 
-## ▶️ Run Frontend
+## ▶️ Run Frontend (Local)
 
-Open in browser:
+This project uses plain HTML, CSS, and JavaScript (no framework).
 
-```
+### Option 1: Open Directly
+
+Simply open the file in your browser:
+
 frontend/index.html
-```
+
+---
+
+### Option 2: Using VS Code Live Server (Recommended)
+
+1. Install "Live Server" extension in VS Code  
+2. Right-click on `index.html`  
+3. Click **"Open with Live Server"**  
+
+This helps avoid CORS issues and provides better experience.
 
 ---
 
 ## ⚠️ Important Notes
 
-* Backend must be running before frontend
-* Ensure correct API URL
-* Token required for protected routes
+- Backend is deployed on Render
+- Frontend is deployed on Vercel
+- Database is hosted on TiDB Cloud
+- Ensure correct API URL is used
+- JWT token required for protected routes
 
 ---
 
@@ -322,12 +363,12 @@ frontend/index.html
 
 ### 👤 Customer
 
-* Email: [ajay@gmail.com]
+* Email: ajay@gmail.com
 * Password: 123456
 
 ### 🏢 Agency
 
-* Email: [agency1@example.com]
+* Email: agency1@example.com
 * Password: 123456
 
 
