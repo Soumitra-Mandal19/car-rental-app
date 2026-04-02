@@ -30,7 +30,7 @@ if (registerForm) {
     }
 
     try {
-      const res = await fetch("http://localhost:8089/api/auth/register", {
+      const res = await fetch("https://car-rental-app-6frm.onrender.com/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password, role }),
@@ -63,7 +63,7 @@ if (loginForm) {
     msg.innerText = "";
 
     try {
-      const res = await fetch("http://localhost:8089/api/auth/login", {
+      const res = await fetch("https://car-rental-app-6frm.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
